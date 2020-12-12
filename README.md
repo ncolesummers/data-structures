@@ -3,3 +3,4 @@ Fundamentals are important, if not always riveting.  This repository serves as a
 Implemented so far:
 - Lists
 - Tuples
+- Heaps

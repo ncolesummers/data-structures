@@ -13,8 +13,8 @@ Describe the relationships between the entities.  Used to build large structures
 ### Gang of Four (**GoF**) Structural design patterns
 - Adapter (adapter.go)
 - Bridge (bridge.go)
-- Composite
-- Decorator
+- Composite (composite.go)
+- Decorator (decorator.go)
 - Facade
 - Flyweight
 - Private Class Data
@@ -56,3 +56,17 @@ A group of similar objects in a single object.  Objects are stored in a tree to 
 - **Component interface** defines the default behavior of all objects and behaviors for accessing the components of the composite.
 - The *composite* and *component* classes implement the component interface.
 - The *client* interacts with the component interface to invoke methods in the composite.
+
+#### Decorator
+In a scenario where class responsibilities are removed or added, the decorator pattern is applied.  The decorator pattern helps with sublassing when modifying functionality, instead of static inheritance.  
+
+The **single responsibility principle** can be achieved using a decorator.
+
+##### Use Cases
+-  *window components* 
+-  *object modeling*
+
+##### Components
+- component interface
+- concrete component class - implements the component interface
+- decorator class - implements the component interface and extends functionality in the same method or additional ones.  The decorator base can be a particapant representing the base class for all decorators.

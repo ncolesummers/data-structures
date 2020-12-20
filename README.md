@@ -15,7 +15,7 @@ Describe the relationships between the entities.  Used to build large structures
 - Bridge (bridge.go)
 - Composite (composite.go)
 - Decorator (decorator.go)
-- Facade
+- Facade (facade.go)
 - Flyweight
 - Private Class Data
 - Proxy 
@@ -70,3 +70,16 @@ The **single responsibility principle** can be achieved using a decorator.
 - component interface
 - concrete component class - implements the component interface
 - decorator class - implements the component interface and extends functionality in the same method or additional ones.  The decorator base can be a particapant representing the base class for all decorators.
+
+#### Facade
+Used to abstract subsystem interfaces with a helper.  This design pattern gets used in scenarios when the number of interfaces increases and the system gets complicated.  Facade is an *entry point* to different subsystems, and it simplifies dependencies between the systems.  It provides an interface that hides the implementation details of the hidden code.
+
+##### Use Cases
+- Loose Coupling
+- Improve poorly designed APIs
+- Incorporate changes to the contract and implementation using a service facade in SOA
+
+##### Components
+- **Facade Class** - Delegates the requests from the client to the module classes; hides the complexities of the subsystem logic and rules
+- **Module Classes** - Implement the behaviors and functionalites of the module subsystem.
+- **Client** - Invokes the `facade` method.  The `facade` class functionality can be spread across multiple packages and assemblies.

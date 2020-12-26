@@ -16,7 +16,7 @@ Describe the relationships between the entities.  Used to build large structures
 - Composite (composite.go)
 - Decorator (decorator.go)
 - Facade (facade.go)
-- Flyweight
+- Flyweight (flyweight.go)
 - Private Class Data
 - Proxy 
 
@@ -83,3 +83,16 @@ Used to abstract subsystem interfaces with a helper.  This design pattern gets u
 - **Facade Class** - Delegates the requests from the client to the module classes; hides the complexities of the subsystem logic and rules
 - **Module Classes** - Implement the behaviors and functionalites of the module subsystem.
 - **Client** - Invokes the `facade` method.  The `facade` class functionality can be spread across multiple packages and assemblies.
+
+#### Flyweight
+Used to manage the state of an object with high variation.  The pattern allows us to share common parts of the object state among multiple objects, instead of each object storing it.  Variable object data is referred to as *extrinsic state*, and the rest of the object state is *intrinsic*.  Extrinsic data is passed to flyweight methods and will never be stored within it.  
+
+Flyweight patterns help reduce the overall memory usage and the object initializing overhead.  The pattern helps create interclass relationships and lower memory to a manageable level.
+
+Flyweight objects are immutable.  
+
+##### Components
+- **FlyWeight** interface - Has a method through which flyweights can get and act on the extrinsic state
+- **ConcreteFlyWeight** - implements the `FlyWeight` interface to represent flyweight objects
+- **FlyweightFactory** - used to create and manage flyweight objects.  The client invokes `FlyweightFactory` to get a flyweight object.  `UnsharedFlyWeight` can have a functionality that is not shared.
+- Client classes

@@ -17,7 +17,7 @@ Describe the relationships between the entities.  Used to build large structures
 - Decorator (decorator.go)
 - Facade (facade.go)
 - Flyweight (flyweight.go)
-- Private Class Data
+- Private Class Data (privateClass.go)
 - Proxy 
 
 #### Adapter
@@ -96,3 +96,6 @@ Flyweight objects are immutable.
 - **ConcreteFlyWeight** - implements the `FlyWeight` interface to represent flyweight objects
 - **FlyweightFactory** - used to create and manage flyweight objects.  The client invokes `FlyweightFactory` to get a flyweight object.  `UnsharedFlyWeight` can have a functionality that is not shared.
 - Client classes
+
+#### Private Class Data
+The private class data pattern secures the data within a class.  This pattern encapsulates the initialization of the class data.  The write privileges of properties within the private class are protected, and properties are set during construction.  The private class pattern prevents the exposure of information by securing it in a class that retains the state.
